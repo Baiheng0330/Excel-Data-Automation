@@ -27,4 +27,9 @@ if run_button:
 
         # Create a download button for the processed Excel file
         with open(output_file_path, "rb") as f:
-            st.download_button("Download Processed Excel File", f,
+            st.download_button("Download Processed Excel File", f, file_name="updated_report.xlsx", mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+
+        st.write("Script executed successfully!")
+
+    except Exception as e:
+        st.error(f"Error: {e}")
